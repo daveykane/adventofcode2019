@@ -1,13 +1,9 @@
 export default class Intcode {
-    constructor(program, { noun, verb, input } = {}) {
-        this.input = input;
+    constructor(program) {
+        this.halted = false;
         this.pointer = 0;
-        this.program = program;
         this.output = [];
-
-        if (Number.isInteger(noun) && Number.isInteger(verb)) {
-            [this.program[1], this.program[2]] = [noun, verb];
-        }
+        this.program = [...program];
     }
 
     get args() {
@@ -32,19 +28,24 @@ export default class Intcode {
         };
     }
 
-    run() {
-        while (this.args.opcode !== 99) {
+    run(inputs = [], waitForInput = false) {
+        while (!this.halted) {
             if ([1, 2, 7, 8].includes(this.args.opcode)) {
                 this.program[this.args.param3] = this.instructions[this.args.opcode]();
                 this.pointer += 4;
             } else if (this.args.opcode === 3) {
-                this.program[this.program[this.pointer + 1]] = this.input;
+                this.program[this.program[this.pointer + 1]] = inputs.shift();
                 this.pointer += 2;
             } else if (this.args.opcode === 4) {
                 this.output.push(this.args.param1);
                 this.pointer += 2;
+                if (waitForInput) {
+                    return this.output[this.output.length - 1];
+                }
             } else if ([5, 6].includes(this.args.opcode)) {
                 this.pointer = this.instructions[this.args.opcode]();
+            } else if (this.args.opcode === 99) {
+                this.halted = true;
             } else {
                 throw new Error("Unknown opcode");
             }

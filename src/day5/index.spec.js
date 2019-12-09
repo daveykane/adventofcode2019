@@ -4,7 +4,7 @@ import { getInput } from "../utils";
 describe("Advent of Code - Day Two", () => {
     describe("Part One", () => {
         it("should output [1]", () => {
-            const result = part1([3, 0, 4, 0, 99], { input: 1 });
+            const result = part1([3, 0, 4, 0, 99], [1]);
             expect(result).toEqual([1]);
         });
 
@@ -20,7 +20,7 @@ describe("Advent of Code - Day Two", () => {
 
         it("should be an array with with leading 0's and 14522484 the last item", async () => {
             const input = (await getInput("day5")).split(",").map(Number);
-            const result = part1(input, { input: 1 });
+            const result = part1(input, [1]);
             const code = result.pop();
             const successful = result.every(output => output === 0);
             expect(successful).toBe(true);
@@ -30,62 +30,62 @@ describe("Advent of Code - Day Two", () => {
 
     describe("Part Two", () => {
         it("should output [1] as input is equal to 8", () => {
-            const result = part2([3, 9, 8, 9, 10, 9, 4, 9, 99, -1, 8], { input: 8 });
+            const result = part2([3, 9, 8, 9, 10, 9, 4, 9, 99, -1, 8], [8]);
             expect(result).toEqual([1]);
         });
 
         it("should output [0] as input not equal to 8", () => {
-            const result = part2([3, 9, 8, 9, 10, 9, 4, 9, 99, -1, 8], { input: 7 });
+            const result = part2([3, 9, 8, 9, 10, 9, 4, 9, 99, -1, 8], [7]);
             expect(result).toEqual([0]);
         });
 
         it("should output [1] as input is less than 8", () => {
-            const result = part2([3, 9, 7, 9, 10, 9, 4, 9, 99, -1, 8], { input: 7 });
+            const result = part2([3, 9, 7, 9, 10, 9, 4, 9, 99, -1, 8], [7]);
             expect(result).toEqual([1]);
         });
 
         it("should output [0] as input is not less than 8", () => {
-            const result = part2([3, 9, 7, 9, 10, 9, 4, 9, 99, -1, 8], { input: 9 });
+            const result = part2([3, 9, 7, 9, 10, 9, 4, 9, 99, -1, 8], [9]);
             expect(result).toEqual([0]);
         });
 
         it("should output [1] as input is equal to 8", () => {
-            const result = part2([3, 3, 1108, -1, 8, 3, 4, 3, 99], { input: 8 });
+            const result = part2([3, 3, 1108, -1, 8, 3, 4, 3, 99], [8]);
             expect(result).toEqual([1]);
         });
 
         it("should output [0] as input not equal to 8", () => {
-            const result = part2([3, 3, 1108, -1, 8, 3, 4, 3, 99], { input: 7 });
+            const result = part2([3, 3, 1108, -1, 8, 3, 4, 3, 99], [7]);
             expect(result).toEqual([0]);
         });
 
         it("should output [1] as input is less than 8", () => {
-            const result = part2([3, 3, 1107, -1, 8, 3, 4, 3, 99], { input: 7 });
+            const result = part2([3, 3, 1107, -1, 8, 3, 4, 3, 99], [7]);
             expect(result).toEqual([1]);
         });
 
         it("should output [0] as input is not less than 8", () => {
-            const result = part2([3, 3, 1107, -1, 8, 3, 4, 3, 99], { input: 9 });
+            const result = part2([3, 3, 1107, -1, 8, 3, 4, 3, 99], [9]);
             expect(result).toEqual([0]);
         });
 
         it("should output [1] as input is not 0", () => {
-            const result = part2([3, 12, 6, 12, 15, 1, 13, 14, 13, 4, 13, 99, -1, 0, 1, 9], { input: 1 });
+            const result = part2([3, 12, 6, 12, 15, 1, 13, 14, 13, 4, 13, 99, -1, 0, 1, 9], [1]);
             expect(result).toEqual([1]);
         });
 
         it("should output [0] as input is 0", () => {
-            const result = part2([3, 12, 6, 12, 15, 1, 13, 14, 13, 4, 13, 99, -1, 0, 1, 9], { input: 0 });
+            const result = part2([3, 12, 6, 12, 15, 1, 13, 14, 13, 4, 13, 99, -1, 0, 1, 9], [0]);
             expect(result).toEqual([0]);
         });
 
         it("should output [1] as input is not 0", () => {
-            const result = part2([3, 3, 1105, -1, 9, 1101, 0, 0, 12, 4, 12, 99, 1], { input: 1 });
+            const result = part2([3, 3, 1105, -1, 9, 1101, 0, 0, 12, 4, 12, 99, 1], [1]);
             expect(result).toEqual([1]);
         });
 
         it("should output [0] as input is 0", () => {
-            const result = part2([3, 3, 1105, -1, 9, 1101, 0, 0, 12, 4, 12, 99, 1], { input: 0 });
+            const result = part2([3, 3, 1105, -1, 9, 1101, 0, 0, 12, 4, 12, 99, 1], [0]);
             expect(result).toEqual([0]);
         });
 
@@ -140,7 +140,7 @@ describe("Advent of Code - Day Two", () => {
                     98,
                     99
                 ],
-                { input: 7 }
+                [7]
             );
             expect(result).toEqual([999]);
         });
@@ -196,7 +196,7 @@ describe("Advent of Code - Day Two", () => {
                     98,
                     99
                 ],
-                { input: 8 }
+                [8]
             );
             expect(result).toEqual([1000]);
         });
@@ -252,14 +252,14 @@ describe("Advent of Code - Day Two", () => {
                     98,
                     99
                 ],
-                { input: 9 }
+                [9]
             );
             expect(result).toEqual([1001]);
         });
 
         it("should output [4655956]", async () => {
             const input = (await getInput("day5")).split(",").map(Number);
-            const result = part2(input, { input: 5 });
+            const result = part2(input, [5]);
             expect(result).toEqual([4655956]);
         });
     });

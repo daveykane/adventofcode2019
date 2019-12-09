@@ -30,7 +30,7 @@ describe("Advent of Code - Day Two", () => {
 
         it("should be an array with [6568671, ...] as the first item", async () => {
             const input = (await getInput("day2")).split(",").map(Number);
-            expect(part1(input, { noun: 12, verb: 2 })[0]).toBe(6568671);
+            expect(part1(input, 12, 2)[0]).toBe(6568671);
         });
     });
 
