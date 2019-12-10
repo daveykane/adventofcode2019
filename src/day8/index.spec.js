@@ -1,7 +1,7 @@
 import { part1, part2 } from ".";
 import { getInput } from "../utils";
 
-describe("Advent of Code - Day Two", () => {
+describe("Advent of Code - Day Eight", () => {
     describe("Part One", () => {
         it("should be 1", () => {
             expect(part1("123456789012", 3, 2)).toEqual(1);

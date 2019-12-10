@@ -1,7 +1,7 @@
 import { part1, part2 } from ".";
 import { getInput } from "../utils";
 
-describe("Advent of Code - Day Four", () => {
+describe("Advent of Code - Day Six", () => {
     describe("Part One", () => {
         it("should have 42 orbits", () => {
             const input = ["COM)B", "B)C", "C)D", "D)E", "E)F", "B)G", "G)H", "D)I", "E)J", "J)K", "K)L"];

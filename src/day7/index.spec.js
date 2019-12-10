@@ -1,7 +1,7 @@
 import { part1, part2 } from ".";
 import { getInput } from "../utils";
 
-describe("Advent of Code - Day Two", () => {
+describe("Advent of Code - Day Seven", () => {
     describe("Part One", () => {
         it("should output 43210", () => {
             const program = [3, 15, 3, 16, 1002, 16, 10, 16, 1, 16, 15, 15, 4, 15, 99, 0, 0];
