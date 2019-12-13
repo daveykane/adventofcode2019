@@ -5,7 +5,8 @@ export const readInput = day => promisify(readFile)(`${__dirname}/../${day}/inpu
 export const getInput = async day => (await readInput(day)).trim();
 export const flatMap = (cb, arr) => arr.reduce((acc, item, i) => acc.concat(cb(item, i)), []);
 export const occurrences = (string, search) => (string.match(new RegExp(search, "g")) || []).length;
-
+export const gcd = (a, b) => (a ? gcd(b % a, a) : b);
+export const lcm = (a, b) => (a * b) / gcd(a, b);
 export const permutations = (input = []) => {
     if (!input.length) {
         return [[]];
