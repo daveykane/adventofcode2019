@@ -40,7 +40,7 @@ export default class Intcode {
                 this.program[this.args.param3] = this.instructions[this.args.opcode]();
                 this.pointer += 4;
             } else if (this.args.opcode === 3) {
-                this.program[this.args.param1] = inputs.shift();
+                this.program[this.args.param1] = typeof inputs === "function" ? inputs() : inputs.shift();
                 this.pointer += 2;
             } else if (this.args.opcode === 4) {
                 this.output.push(this.program[this.args.param1]);
