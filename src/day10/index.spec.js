@@ -1,7 +1,7 @@
 import { part1, part2 } from ".";
 import { getInput } from "../utils";
 
-describe("Advent of Code - Day Eight", () => {
+describe("Advent of Code - Day Ten", () => {
     describe("Part One", () => {
         it("should see 8", () => {
             const map = `   .#..#

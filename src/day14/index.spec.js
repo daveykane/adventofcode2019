@@ -1,7 +1,7 @@
 import { part1, part2 } from ".";
 import { getInput } from "../utils";
 
-describe("Advent of Code - Day Nine", () => {
+describe("Advent of Code - Day Fourteen", () => {
     describe("Part One", () => {
         it("needs 31 ORE", async () => {
             const reactions = `

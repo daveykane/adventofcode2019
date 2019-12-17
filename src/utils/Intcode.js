@@ -1,8 +1,8 @@
 export default class Intcode {
-    constructor(program, memory) {
+    constructor(program, memory, pointer = 0, relativeBase = 0) {
         this.halted = false;
-        this.pointer = 0;
-        this.relativeBase = 0;
+        this.pointer = pointer;
+        this.relativeBase = relativeBase;
         this.output = [];
         this.program = [...program, ...(memory ? Array.from({ length: 5000 }, () => 0) : [])];
     }
@@ -32,6 +32,10 @@ export default class Intcode {
         const param = this.pointer + index;
         const base = mode === 2 ? this.relativeBase : 0;
         return mode === 1 ? param : base + this.program[param];
+    }
+
+    clone() {
+        return new Intcode([...this.program], false, this.pointer, this.relativeBase);
     }
 
     run(inputs = [], waitForInput = false) {

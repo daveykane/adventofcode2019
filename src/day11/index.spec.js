@@ -1,7 +1,7 @@
 import { part1, part2 } from ".";
 import { getInput } from "../utils";
 
-describe("Advent of Code - Day Nine", () => {
+describe("Advent of Code - Day Eleven", () => {
     describe("Part One", () => {
         it("should paint 1883 panels", async () => {
             const input = (await getInput("day11")).split(",").map(Number);

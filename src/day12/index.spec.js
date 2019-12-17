@@ -1,7 +1,7 @@
 import { part1, part2 } from ".";
 import { getInput } from "../utils";
 
-describe("Advent of Code - Day Nine", () => {
+describe("Advent of Code - Day Twelve", () => {
     describe("Part One", () => {
         it("total energy should be 179 after 10 steps", async () => {
             const moons = ["<x=-1, y=0, z=2>", "<x=2, y=-10, z=-7>", "<x=4, y=-8, z=8>", "<x=3, y=5, z=-1>"];
