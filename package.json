@@ -6,7 +6,8 @@
     "author": "David Kane <david@osk.ltd>",
     "license": "MIT",
     "scripts": {
-        "test": "jest src/**/*.spec.js"
+        "test:2020": "jest src/2020/**/*.spec.js",
+        "test:2021": "jest src/2021/**/*.spec.js"
     },
     "devDependencies": {
         "@babel/plugin-transform-modules-commonjs": "^7.7.4",
